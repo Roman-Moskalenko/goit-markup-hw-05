@@ -83,7 +83,7 @@ img {
 .header {
   padding-top: 24px;
   padding-bottom: 24px;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid #ececec;
 }
 
 .header-link-logo {
@@ -111,13 +111,13 @@ img {
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
   position: relative;
-  padding-bottom: 32px;
   transition: color var(--transition-duration) var(--main-cubic);
 }
 .header-item:not(:last-child) {
   margin-right: 50px;
 }
-.anderline {
+.header-link.anderline::after {
+  content: "";
   height: 4px;
   width: 100%;
   background-color: var(--accent-color);
@@ -125,6 +125,7 @@ img {
   position: absolute;
   bottom: 0px;
   left: 0px;
+  bottom: -32px;
 }
 .header-link:hover,
 .header-link:focus {
@@ -572,8 +573,10 @@ img {
 .portfolio-filter-item-button {
   border-radius: 4px;
   border-color: transparent;
+  padding: 6px 22px;
   transition: color var(--transition-duration) var(--main-cubic),
-    background-color var(--transition-duration) var(--main-cubic);
+    background-color var(--transition-duration) var(--main-cubic),
+    box-shadow var(--transition-duration) var(--main-cubic);
 }
 .portfolio-filter-item-button {
   font-style: normal;
@@ -598,7 +601,6 @@ img {
   border-top: none;
 }
 .portfolio-heading {
-  text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 24px;
@@ -634,11 +636,7 @@ img {
   letter-spacing: 0.03em;
   color: var(--title-text-color);
 }
-.portfolio-link:hover,
-.portfolio-link:focus {
-  color: var(--accent-color);
-  background-color: var(--accent-color);
-}
+
 .portfolio-link-conteiner {
   position: relative;
   overflow: hidden;
@@ -660,8 +658,23 @@ img {
   transition: transform var(--transition-duration) var(--main-cubic);
 }
 
-.portfolio-list-item:hover .portfolio-top-text {
+.portfolio-link:hover .portfolio-top-text {
   transform: translateY(0);
+}
+.portfolio-link:focus .portfolio-top-text {
+  transform: translateY(0);
+}
+.portfolio-link {
+  display: block;
+  transition: box-shadow var(--transition-duration) var(--main-cubic);
+}
+.portfolio-link:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.portfolio-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 /* --------------------------------------------------BACKDROP----------------------------------------------------------------- */
 
